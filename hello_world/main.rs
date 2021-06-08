@@ -1,3 +1,7 @@
 fn main() {
-    println!("Hello, world!")
+    /* 
+        println! : macro 
+        println : function
+    */
+    println!("Hello, world!");
 }

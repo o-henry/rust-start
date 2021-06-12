@@ -6,7 +6,7 @@
 
 Cargo is Rust’s build system and package manager.
 
-- cargo new 'project_name' --bin
+- cargo new "project_name" --bin
 - cargo check
 - cargo build
 - cargo run

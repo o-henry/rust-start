@@ -2,8 +2,6 @@
 
 http://web.mit.edu/rust-lang_v1.25/arch/amd64_ubuntu1404/share/doc/rust/html/book/first-edition/the-stack-and-the-heap.html#memory-management
 
-## Stack & Heap
-
 ## Stack
 
 - 매우 빠르다
@@ -32,7 +30,7 @@ fn main() {
 - 명시적으로 할당한다. (스택 은 기본적으로 자동으로 할당된다.)
 - 전역에서 접근 가능하다.
 - 크기 제한이 없다.
-- 자료구조의 힙과는 다르다.
+- 자료구조의 힙과는 차이가 있다.
 
 때떄로, 다른 함수들 사이에서 메모리를 넘길 필요가 있거나, 좀더 오래 메모리에서 유지시키고 싶을때 Heap을 사용합니다.
 
@@ -43,4 +41,5 @@ fn main() {
 }
 ```
 
-러스트에서는 `Box<T>` 타입으로 힙에 메모리를 할당할 수 있습니다.
+러스트에서는 `Box<T>` 타입으로 힙에 메모리를 할당할 수 있습니다. main 함수가 실행될때, 스택에 x와 y 두 변수의 공간을 할당합니다.
+y는 42로 할당되지만, x는 어떨까요? x는 `Box<i32>`로 heap에 메모리를 할당합니다. 실제 값은 heap에 대한 포인터가 있는 구조 입니다.

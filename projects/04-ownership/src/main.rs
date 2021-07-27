@@ -15,7 +15,11 @@ fn main() {
 
     let x = 5;
     makes_copy(x);
-    println!("{}", x);
+    println!("{}", x); // i32는 Copy 되므로, x는 스코프 밖에서도 사용 가능.
+
+    let s1 = gives_ownership();
+    let s2 = String::from("hello");
+    let s3 = takes_and_gives_back(s2);
 }
 
 fn move_variables() {
@@ -38,12 +42,34 @@ fn move_variables() {
 
 /* 소유권 과 함수 */
 fn takes_ownership(some_string: String) {
-    let some_string = "bye"; // can re-assign → mutable ?!
     println!("some string is : {}", some_string);
-
-    // } 괄호가 닫힐때 자동적으로 drop을 호출 -> 메모리 회수.
-}
+} // } 괄호가 닫힐때 자동적으로 drop을 호출 -> 메모리 해제.
 
 fn makes_copy(some_integer: i32) {
     println!("{}", some_integer);
+}
+
+fn gives_ownership() -> String {
+    let some_string = String::from("hello");
+    some_string
+}
+
+fn takes_and_gives_back(a_string: String) -> String {
+    a_string
+}
+
+/* 참조자
+ * & => reference
+ * 어떠한 값을 소유권을 넘기지 않고 참조할 수 있게 해준다.
+ * 실제 값 대신 참조자를 파라미터로 갖고 있는 함수는 소유권을 갖고 있지 않기 때문에 소유권을 되돌려주기 위해 값을 다시 반환할 필요도 없다는 뜻
+ */
+fn reference() {
+    let s1 = String::from("hello");
+    let len = calculate_length(&s1);
+
+    println!("The length of '{}' is {}.", s1, len);
+}
+
+fn calculate_length(s: &String) -> usize {
+    s.len()
 }

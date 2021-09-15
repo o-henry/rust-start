@@ -1,4 +1,4 @@
-fn main() {
+fn basic() {
     struct User {
         username: String,
         email: String,
@@ -31,4 +31,37 @@ fn main() {
         username: String::from("anotherusernames567"),
         ..user1
     };
+
+    struct Color(i32, i32, i32);
+    struct Point(i32, i32, i32);
+
+    let black = Color(0, 0, 0);
+    let origin = Point(0, 0, 0);
+}
+
+#[derive(Debug)]
+struct Rectangle {
+    length: u32,
+    width: u32,
+}
+
+impl Rectangle {
+    // method
+    fn area(&self) -> u32 {
+        self.length * self.width
+    }
+}
+
+fn main() {
+    let rect1 = Rectangle {
+        length: 50,
+        width: 30,
+    };
+
+    println!("rect1 is {:#?}", rect1);
+
+    println!(
+        "The area of the rectangle is {} square pixels. ",
+        rect1.area()
+    );
 }

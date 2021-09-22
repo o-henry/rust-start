@@ -26,3 +26,6 @@ fn range() {
     }
     println!("LIFTOFF!!!")
 }
+
+// Temperature converter
+// 32'C => 89.6'F

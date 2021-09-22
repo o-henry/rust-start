@@ -7,7 +7,7 @@
 const MAX_POINTS: u32 = 100_000;
 
 fn main() {
-    let x = 5;
+    let x = 5; // x is imutable
     println!("The value of x is: {}", x);
     x = 6; // cannot assign twice to immutable variable `x`
     println!("The value of x is: {}", x);
@@ -17,8 +17,8 @@ fn main() {
     y = 7;
     println!("The value of y is: {}", y);
 
-    // shadowing
-    let spaces = "    ";
+    // shadowing => 궁금한점, shadowing이 되면 기존 변수 데이터는 삭제 되는지 
+    let spaces = " abcd  ";
     let spaces = spaces.len(); // 같은 이름의 변수선언 가능
     println!("spaces: {}", spaces)
 }

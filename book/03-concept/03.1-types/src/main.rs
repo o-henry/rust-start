@@ -10,13 +10,13 @@ fn main() {
     let y: f32 = 3.0;
     let t = true;
     let f: bool = false;
-    let tup: (i32, f64, u8) = (500, 6.4, 1);
+    let tup: (i32, f64, u8) = (500, 6.4, 1); // tuple type
 
     let (a, b, c) = tup;
-    println!("The value of b is : {} ", b);
+    println!("The value of b is : {} ", b); // 6.4
 
-    let five_hundred = tup.0;
-    println!("The value of five_hundred is : {} ", five_hundred);
+    let five_hundred = tup.0; // dot notation 으로 접근 가능하나, 좋은 접근은 아니다. 어떤 값에 접근하는지 모르기 때문
+    println!("The value of five_hundred is : {} ", five_hundred); // 500
 
     let array = [1, 2, 3, 4, 5];
 
@@ -35,5 +35,5 @@ fn main() {
         "December",
     ];
 
-    println!("The value of eleements is: {} ", array[10]);
+    // println!("The value of eleements is: {} ", array[10]);
 }

@@ -26,6 +26,7 @@ fn basic() {
         }
     }
 
+    // 구조체 갱신 문법
     let user2 = User {
         email: String::from("another@example.com"),
         username: String::from("anotherusernames567"),

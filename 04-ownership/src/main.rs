@@ -1,18 +1,17 @@
 fn main() {
     /*
-     * 소유권  
+     * 소유권
      * 스택 / 힙
      * 변수의 범위
      * 메모리와 할당
      * Move / Clone / Copy
      * Drop
      * 소유권과 함수
-     * 
-     * 
+     *
+     *
      * String type => 힙에 할당되는 타입으로, 컴파일 시점에 알 수 없는 크기의 문자열을 저장할 수 있다.
      * 힙 메모리에 저장된 변수의 데이터는 소유권이 다른 변수로 옮겨지지 않았다면 범위를 벗어날때 drop함수에 의해 제거된다.
      */
-
 
     let mut base_s = String::from("hello");
     base_s.push_str(", world!");
@@ -33,7 +32,6 @@ fn main() {
     let s2 = String::from("hello");
     let s3 = takes_and_gives_back(s2);
 }
-
 
 fn move_variables() {
     let x = 5;

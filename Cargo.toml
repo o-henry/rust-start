@@ -4,5 +4,9 @@ members = [
     "01-hello_cargo",
     "02-guessing_game",
     "04-ownership",
-    "05-structure"
+    "05-structure",
+    "06-pattern",
+    "07-module",
+    "08-collection",
+    "09-error"
 ]

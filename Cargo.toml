@@ -8,5 +8,7 @@ members = [
     "06-pattern",
     "07-module",
     "08-collection",
-    "09-error"
+    "09-error",
+    "10-generic",
+    "11-test"
 ]

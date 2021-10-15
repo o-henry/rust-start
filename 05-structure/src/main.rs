@@ -1,68 +1,50 @@
-fn basic() {
-    struct User {
-        username: String,
-        email: String,
-        sign_in_count: u64,
-        active: bool,
-    }
-
-    // create User instance
-    // 인스턴스는 반드시 mutable 해야 한다.
-    let mut user1 = User {
-        email: String::from("someone@example.com"),
-        username: String::from("someusername123"),
-        active: true,
-        sign_in_count: 1,
-    };
-
-    user1.email = String::from("anotheremail@example.com");
-
-    fn build_user(email: String, username: String) -> User {
-        User {
-            email,
-            username,
-            active: true,
-            sign_in_count: 1,
-        }
-    }
-
-    // 구조체 갱신 문법
-    let user2 = User {
-        email: String::from("another@example.com"),
-        username: String::from("anotherusernames567"),
-        ..user1
-    };
-
-    struct Color(i32, i32, i32);
-    struct Point(i32, i32, i32);
-
-    let black = Color(0, 0, 0);
-    let origin = Point(0, 0, 0);
-}
-
 #[derive(Debug)]
 struct Rectangle {
-    length: u32,
+    height: u32,
     width: u32,
 }
 
+// method
 impl Rectangle {
-    // method
     fn area(&self) -> u32 {
-        self.length * self.width
+        self.height * self.width
+    }
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        self.width > other.width && self.height > other.height
+    }
+    // 생성자를 구현할때 사용
+    fn square(size: u32) -> Rectangle {
+        Rectangle {
+            width: size,
+            height: size,
+        }
     }
 }
 
 fn main() {
+    // 초기화
     let rect1 = Rectangle {
-        length: 50,
+        height: 50,
         width: 30,
+    };
+    let rect2 = Rectangle {
+        width: 10,
+        height: 40,
+    };
+    let rect3 = Rectangle {
+        width: 60,
+        height: 45,
     };
 
     println!("rect1 is {:#?}", rect1);
+    println!("rect1은 rect2를 포함하는가? {}", rect1.can_hold(&rect2));
+    println!("rect1은 rect3를 포함하는가? {}", rect1.can_hold(&rect3));
 
     println!(
         "The area of the rectangle is {} square pixels. ",
         rect1.area()
     );
+
+    let sq = Rectangle::square(3);
+    println!("square {:#?}", sq);
 }

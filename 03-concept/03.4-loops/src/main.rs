@@ -29,3 +29,16 @@ fn range() {
 
 // Temperature converter
 // 32'C => 89.6'F
+
+fn main() {
+    let mut x = 0;
+
+    loop {
+        x += 1;
+        if x == 42 {
+            break;
+        }
+    }
+
+    println!("{}", x);
+}

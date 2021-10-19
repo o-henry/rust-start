@@ -4,7 +4,7 @@
  * 선언되어 있는 영역내에서 유효하며, 도메인 전체에서 사용 가능
  **/
 
-const MAX_POINTS: u32 = 100_000;
+const MAX_POINTS: u32 = 100_000; // 상수는 항상 타입을 추가해야한다
 
 fn main() {
     let x = 5; // x is imutable

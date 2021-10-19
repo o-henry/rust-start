@@ -11,5 +11,7 @@ members = [
     "09-error",
     "10-generic",
     "11-test",
-    "12-io"
+    "12-io",
+    "13-fp",
+    "15-pointer"
 ]

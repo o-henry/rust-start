@@ -1,4 +1,5 @@
 fn main() {
+    // 사용 가능한 값만 나열한 타입을 정의할 때 사용하는 enum
     let five = Some(5);
     let six = plus_one(five);
     let none = plus_one(None);

@@ -13,5 +13,6 @@ members = [
     "11-test",
     "12-io",
     "13-fp",
-    "15-pointer"
+    "15-pointer",
+    "20-multi_thread"
 ]

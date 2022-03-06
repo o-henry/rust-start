@@ -10,6 +10,7 @@ fn main() {
     let x = 5; // x is imutable
     println!("The value of x is: {}", x);
     x = 6; // cannot assign twice to immutable variable `x`
+           // 컴파일 시점에서 불변 변수로 선언한 변수에 값을 할당할 수 없다는 에러가 발생한다.
     println!("The value of x is: {}", x);
 
     let mut y = 6;
